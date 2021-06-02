@@ -20,4 +20,10 @@
     <string name="_0">0</string>
     <string name="_dot">.</string>
     <string name="_plus">+</string>
-    </resources>
+    <string name="num1">Введите первое число</string>
+    <string name="num2">Введите второе число</string>
+    <string name="result">Результат</string>
+    <string name="Результат" />
+    <string name="Число_2" />
+    <string name="Число_1" />
+</resources>

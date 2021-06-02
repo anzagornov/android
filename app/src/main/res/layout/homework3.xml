@@ -1,56 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/sea">
+    android:orientation="vertical">
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1" />
 
     <EditText
+        android:id="@+id/num1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter a number"
-        android:textSize="35sp"
-        android:textColor="@color/white"/>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:text="@string/Число_1"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"
+        android:hint="@string/num1"
+        android:inputType="numberDecimal"
+        android:autofillHints=" " />
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/button_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_clear"
-            android:textSize="25dp" />
-        <Button
-            android:id="@+id/button_percent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_percent"
-            android:textSize="25dp" />
-        <Button
-            android:id="@+id/button_plusminus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_plus_minus"
-            android:textSize="25dp" />
-        <Button
-            android:id="@+id/button_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_delete"
-            android:textSize="25dp" />
-    </LinearLayout>
+        android:text="@string/Число_2"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"
+        android:hint="@string/num2"
+        android:inputType="numberDecimal"
+        android:autofillHints=" " />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Результат"
+        android:textSize="20sp"
+        android:textColor="@color/teal_200"
+        android:hint="@string/result"
+        android:inputType="numberDecimal"
+        tools:ignore="TextViewEdits" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_1"
-            android:textSize="25dp" />
+            android:textSize="25sp"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/button_2"
@@ -71,21 +61,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_2"
-            android:textSize="25dp" />
+            android:textSize="25sp"
+            tools:ignore="ButtonStyle" />
         <Button
             android:id="@+id/button_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_3"
-            android:textSize="25dp" />
+            android:textSize="25sp"
+            tools:ignore="ButtonStyle" />
         <Button
             android:id="@+id/button_dividing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_dividing"
-            android:textSize="25dp" />
+            android:textSize="25sp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
     <LinearLayout
