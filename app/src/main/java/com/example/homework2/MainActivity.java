@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homework3);
+        setContentView(R.layout.homework4);
 
         num1=(EditText)findViewById(R.id.num1);
         num2=(EditText)findViewById(R.id.num2);
@@ -82,8 +82,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         float value2 = 0;
         float result = 0;
 
-        value1 = Float.parseFloat(num1.getText().toString());
-        value2 = Float.parseFloat(num2.getText().toString());
+        String numString1 = num1.getText().toString();
+        String numString2 = num2.getText().toString();
+
+        value1 = numString1.isEmpty() ? 0 : Float.parseFloat(numString1);
+        value2 = numString1.isEmpty() ? 0 : Float.parseFloat(numString2);
 
         switch (v.getId()) {
             case R.id.button_plus:
