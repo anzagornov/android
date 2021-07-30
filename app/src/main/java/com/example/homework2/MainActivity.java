@@ -3,6 +3,7 @@ package com.example.homework2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,48 +15,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText num1;
     private EditText num2;
     private TextView Result;
-    private Button button_1;
-    private Button button_2;
-    private Button button_3;
-    private Button button_dividing;
-    private Button button_4;
-    private Button button_5;
-    private Button button_6;
-    private Button button_multiplying;
-    private Button button_7;
-    private Button button_8;
-    private Button button_9;
-    private Button button_minus;
-    private Button button_equally;
-    private Button button_0;
-    private Button button_dot;
-    private Button button_plus;
     private String count = " ";
+
+    private static final String my_appTheme = "APP_THEME";
+
+    private static final int Homework_red = 0;
+    private static final int Homework_green = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(Homework_green);
         super.onCreate(savedInstanceState);
+        int currentThemeCode = getCodeStyle();
+        int currentThemeResID = codeStyleToStyleId(currentThemeCode);
         setContentView(R.layout.homework4);
+        setTheme(currentThemeResID);
 
-        num1=(EditText)findViewById(R.id.num1);
-        num2=(EditText)findViewById(R.id.num2);
-        Result=(TextView)findViewById(R.id.result);
-        button_1=(Button) findViewById(R.id.button_1);
-        button_2=(Button) findViewById(R.id.button_2);
-        button_3=(Button) findViewById(R.id.button_3);
-        button_dividing=(Button) findViewById(R.id.button_dividing);
-        button_4=(Button) findViewById(R.id.button_4);
-        button_5=(Button) findViewById(R.id.button_5);
-        button_6=(Button) findViewById(R.id.button_6);
-        button_multiplying=(Button) findViewById(R.id.button_multiplying);
-        button_7=(Button) findViewById(R.id.button_7);
-        button_8 =(Button) findViewById(R.id.button_8);
-        button_9 =(Button) findViewById(R.id.button_9);
-        button_minus=(Button) findViewById(R.id.button_minus);
-        button_equally=(Button) findViewById(R.id.button_equally);
-        button_0=(Button) findViewById(R.id.button_0);
-        button_dot=(Button) findViewById(R.id.button_dot);
-        button_plus=(Button) findViewById(R.id.button_plus);
+        setTheme(getCodeStyle());
+
+        initRadioButton();
+
+        num1 = (EditText) findViewById(R.id.num1);
+        num2 = (EditText) findViewById(R.id.num2);
+        Result = (TextView) findViewById(R.id.result);
+        Button button_1 = (Button) findViewById(R.id.button_1);
+        Button button_2 = (Button) findViewById(R.id.button_2);
+        Button button_3 = (Button) findViewById(R.id.button_3);
+        Button button_dividing = (Button) findViewById(R.id.button_dividing);
+        Button button_4 = (Button) findViewById(R.id.button_4);
+        Button button_5 = (Button) findViewById(R.id.button_5);
+        Button button_6 = (Button) findViewById(R.id.button_6);
+        Button button_multiplying = (Button) findViewById(R.id.button_multiplying);
+        Button button_7 = (Button) findViewById(R.id.button_7);
+        Button button_8 = (Button) findViewById(R.id.button_8);
+        Button button_9 = (Button) findViewById(R.id.button_9);
+        Button button_minus = (Button) findViewById(R.id.button_minus);
+        Button button_equally = (Button) findViewById(R.id.button_equally);
+        Button button_0 = (Button) findViewById(R.id.button_0);
+        Button button_dot = (Button) findViewById(R.id.button_dot);
+        Button button_plus = (Button) findViewById(R.id.button_plus);
 
         button_1.setOnClickListener(this);
         button_2.setOnClickListener(this);
@@ -75,9 +73,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_plus.setOnClickListener(this);
     }
 
+    private void initRadioButton() {
+        findViewById(R.id.radioButtonHomework_red).setOnClickListener(v -> {
+            setTheme(Homework_red);
+            recreate();
+        });
+        findViewById(R.id.radioButtonHomework_green).setOnClickListener(v -> {
+            setTheme(Homework_green);
+            recreate();
+        });
+    }
+
+
     @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     @Override
-    public void onClick(View v) {
+    public void onClick (View v){
         float value1 = 0;
         float value2 = 0;
         float result = 0;
@@ -88,24 +98,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         value1 = numString1.isEmpty() ? 0 : Float.parseFloat(numString1);
         value2 = numString1.isEmpty() ? 0 : Float.parseFloat(numString2);
 
-        switch (v.getId()) {
-            case R.id.button_plus:
-                count = "+";
-                result = value1 + value2;
-                break;
-            case R.id.button_minus:
-                count = "-";
-                result = value1 - value2;
-                break;
-            case R.id.button_multiplying:
-                count = "*";
-                result = value1 * value2;
-                break;
-            case R.id.button_dividing:
-                count = "/";
-                result = value1 / value2;
-                break;
+        if (count == "+") {
+            result = value1 + value2;
+        } else if (count == "-") {
+            result = value1 - value2;
+        } else if (count == "*") {
+            result = value1 * value2;
+        } else {
+            result = value1 / value2;
         }
+
         Result.setText(value1 + " " + count + " " + value2 + " = " + result);
+    }
+
+    private int getAppTheme(int code) {
+        return codeStyleToStyleId(getCodeStyle());
+    }
+
+    private int codeStyleToStyle(int code) {
+        return codeStyleToStyleId(getCodeStyle());
+    }
+
+    private int getCodeStyle() {
+
+        SharedPreferences preferences = getSharedPreferences(my_appTheme, MODE_PRIVATE);
+
+        return preferences.getInt(my_appTheme, R.style.Theme_HomeWork_red);
+    }
+
+    private void setMy_appTheme(int codeStyle) {
+        SharedPreferences preferences = getSharedPreferences(my_appTheme, MODE_PRIVATE);
+
+        preferences.edit()
+                .putInt(my_appTheme, codeStyle)
+                .apply();
+    }
+
+    private int codeStyleToStyleId(int codeStyle) {
+        switch (codeStyle) {
+            case Homework_red:
+                return R.style.Theme_HomeWork_red;
+            default:
+                return R.style.Theme_HomeWork_green;
+        }
     }
 }

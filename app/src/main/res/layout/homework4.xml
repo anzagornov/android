@@ -3,7 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/liver">
+    
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonHomework_red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heme.HomeWork_red"
+            android:textSize="20sp"
+            android:textColor="@color/red"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonHomework_green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heme.HomeWork_green"
+            android:textSize="20sp"
+            android:textColor="@color/teal_200"/>
+    </RadioGroup>
+
 
     <Space
         android:layout_width="match_parent"
@@ -17,8 +40,8 @@
         android:autofillHints=" "
         android:hint="@string/num1"
         android:inputType="numberDecimal"
-        android:text="@string/Число_1"
-        android:textColor="@color/teal_200"
+        android:text=" "
+        android:textColor="@color/red"
         android:textSize="20sp" />
 
     <EditText
@@ -28,8 +51,8 @@
         android:autofillHints=" "
         android:hint="@string/num2"
         android:inputType="numberDecimal"
-        android:text="@string/Число_2"
-        android:textColor="@color/teal_200"
+        android:text=" "
+        android:textColor="@color/red"
         android:textSize="20sp" />
 
     <TextView
@@ -39,7 +62,7 @@
         android:hint="@string/result"
         android:inputType="numberDecimal"
         android:text="@string/Результат"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/red"
         android:textSize="20sp"
         tools:ignore="TextViewEdits" />
 
@@ -55,7 +78,8 @@
             android:layout_weight="1"
             android:text="@string/_1"
             android:textSize="25sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_2"
@@ -64,7 +88,8 @@
             android:layout_weight="1"
             android:text="@string/_2"
             android:textSize="25sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_3"
@@ -73,7 +98,8 @@
             android:layout_weight="1"
             android:text="@string/_3"
             android:textSize="25sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_dividing"
@@ -82,7 +108,8 @@
             android:layout_weight="1"
             android:text="@string/_dividing"
             android:textSize="25sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -96,7 +123,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_4"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_5"
@@ -104,7 +132,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_5"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_6"
@@ -112,7 +141,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_6"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_multiplying"
@@ -120,7 +150,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_multiplying"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -134,7 +165,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_7"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_8"
@@ -143,7 +175,8 @@
             android:layout_weight="1"
             android:text="@string/_8"
             android:textSize="25sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_9"
@@ -151,7 +184,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_9"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_minus"
@@ -159,7 +193,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_minus"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -173,7 +208,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_equally"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_0"
@@ -181,7 +217,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_0"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_dot"
@@ -189,7 +226,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_dot"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_plus"
@@ -197,6 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/_plus"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:layout_margin="5dp"/>
     </LinearLayout>
 </LinearLayout>

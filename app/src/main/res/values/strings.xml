@@ -14,12 +14,17 @@
     <string name="num2">Введите второе число</string>
     <string name="result">Результат</string>
     <string name="Результат" />
-    <string name="Число_1">Число_1</string>
-    <string name="Число_2">Число_2</string>
+    <string name="NUM1">NUM 1</string>
+    <string name="NUM2">NUM2</string>
     <string name="_dividing">/</string>
     <string name="_multiplying">*</string>
     <string name="_minus">-</string>
     <string name="_equally">=</string>
     <string name="_dot">.</string>
     <string name="_plus">+</string>
+    <string name="Число_1">NUM 1</string>
+    <string name="Число_2">NUM2</string>
+    <string name="heme.HomeWork_red">RED</string>
+    <string name="heme.HomeWork_green">GREEN</string>
+
 </resources>
